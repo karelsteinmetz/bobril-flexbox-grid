@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "jsx": "react",
+        "reactNamespace": "b"
+    },
+    "compileOnSave": false,
+    "files": [
+        "example.ts",
+        "index.ts",
+        "node_modules/bobril/jsx.d.ts",
+        "src/col.ts",
+        "src/grid.ts",
+        "src/row.ts"
+    ]
+}

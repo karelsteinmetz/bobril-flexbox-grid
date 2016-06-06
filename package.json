@@ -1,0 +1,28 @@
+{
+  "name": "bobril-flexbox-grid",
+  "version": "0.0.1",
+  "dependencies": {
+    "bobril": "^4.39.0",
+    "flexboxgrid": "^6.3.0"
+  },
+  "devDependencies": {
+    "bobril-m": "^0.6.0"
+  },
+  "main": "index.js",
+  "typescript": {
+    "main": "index.ts"
+  },
+  "bobril": {
+    "title": "Bobril FlexBox Grid",
+    "example": "example.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karelsteinmetz/bobril-flexbox-grid.git"
+  },
+  "keywords": [
+    "bobril"
+  ],
+  "author": "k.steinmetz",
+  "license": "MIT"
+}
