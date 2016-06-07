@@ -1,7 +1,9 @@
-import * as b from 'bobril';
+import * as b from "bobril";
 
-b.asset('./node_modules/flexboxgrid/css/flexboxgrid.css');
+declare var DEBUG: boolean;
 
-export * from './src/grid';
-export * from './src/row';
-export * from './src/col';
+b.asset(DEBUG ? "./css/flexboxgrid.css" : "./css/flexboxgrid.min.css");
+
+export * from "./src/grid";
+export * from "./src/row";
+export * from "./src/col";

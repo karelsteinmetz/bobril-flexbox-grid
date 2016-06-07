@@ -1,6 +1,6 @@
 {
   "name": "bobril-flexbox-grid",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {
     "bobril": "^4.39.0",
     "flexboxgrid": "^6.3.0"

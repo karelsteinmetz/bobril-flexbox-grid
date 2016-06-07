@@ -9,7 +9,6 @@
     "compileOnSave": false,
     "files": [
         "example.ts",
-        "examples.ts",
         "examples/alignment.ts",
         "examples/autoWidth.ts",
         "examples/box.ts",
