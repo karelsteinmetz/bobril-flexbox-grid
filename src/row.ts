@@ -1,10 +1,17 @@
 import * as b from 'bobril';
 
 export const enum ModificatorType {
-    xs,
+    xs = 1,
     sm,
     md,
     lg
+}
+
+const ModificatorTypeMap = {
+    [ModificatorType.xs]: "xs",
+    [ModificatorType.sm]: "sm",
+    [ModificatorType.md]: "md",
+    [ModificatorType.lg]: "lg"
 }
 
 export const modificatorKeys = ['start', 'center', 'end', 'top', 'middle', 'bottom', 'around', 'between', 'first', 'last'];
@@ -40,7 +47,7 @@ export const Row = b.createComponent<IRowData>({
             const key = modificatorKeys[i];
             const value = ctx.data[key];
             if (value)
-                modificators.push(`${key}-${value}`);
+                modificators.push(`${key}-${ModificatorTypeMap[value]}`);
         }
 
         if (ctx.data.reverse)
