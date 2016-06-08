@@ -11,15 +11,15 @@ export function create(): b.IBobrilNode {
         children: [
             fbg.Row({
                 children: [
-                    fbg.Col({ children: x.Box({}) }),
-                    fbg.Col({ children: x.Box({}) })
+                    fbg.Col({ children: x.Box({}), xs: true }),
+                    fbg.Col({ children: x.Box({}), xs: true })
                 ]
             }),
             fbg.Row({
                 children: [
-                    fbg.Col({ children: x.Box({}) }),
-                    fbg.Col({ children: x.Box({}) }),
-                    fbg.Col({ children: x.Box({}) })
+                    fbg.Col({ children: x.Box({}), xs: true }),
+                    fbg.Col({ children: x.Box({}), xs: true }),
+                    fbg.Col({ children: x.Box({}), xs: true })
                 ]
             })
         ]

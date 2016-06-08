@@ -46,9 +46,9 @@ export const Col = b.createComponent<IColData>({
         for (const key in ctx.data) {
             if (ctx.data.hasOwnProperty(key) && classMap[key]) {
                 let colBaseClass = classMap[key];
-                colBaseClass = isNaN(Number(ctx.data[key]))
-                    ? colBaseClass
-                    : colBaseClass + '-' + ctx.data[key];
+                let colClass = ctx.data[key];
+                if (typeof (colClass) !== "boolean" && !isNaN(Number(colClass)))
+                    colBaseClass = colBaseClass + '-' + colClass;
                 classes.push(colBaseClass);
             }
         }
