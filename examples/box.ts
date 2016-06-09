@@ -1,6 +1,7 @@
 import * as b from 'bobril';
 
 interface IBoxData {
+    style?: b.IBobrilStyles;
 }
 
 interface IBoxCtx extends b.IBobrilCtx {
@@ -9,6 +10,12 @@ interface IBoxCtx extends b.IBobrilCtx {
 
 export const Box = b.createComponent<IBoxData>({
     render(ctx: IBoxCtx, me: b.IBobrilNode) {
-        b.style(me, { backgroundColor: "#007fff", padding: 10, margin: 5 });
+        b.style(me, [baseStyle, ctx.data.style && ctx.data.style]);
     }
+});
+
+export const baseStyle = b.styleDef({
+    backgroundColor: "#007fff",
+    padding: 10,
+    margin: 5
 });

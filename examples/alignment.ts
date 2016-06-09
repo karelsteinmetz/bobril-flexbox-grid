@@ -14,8 +14,8 @@ export function create(): b.IBobrilNode {
                 children: [
                     fbg.Col({
                         xs: 12,
-                        children: fbg.Row({
-                            style: h.nestedRowStyle,
+                        children: h.container(fbg.Row({
+                            style: h.containerStyle,
                             start: fbg.ModificatorType.xs,
                             children: [
                                 fbg.Col({
@@ -23,7 +23,7 @@ export function create(): b.IBobrilNode {
                                     children: x.Box({})
                                 })
                             ]
-                        })
+                        }))
                     })
                 ]
             }),
@@ -32,8 +32,8 @@ export function create(): b.IBobrilNode {
                 children: [
                     fbg.Col({
                         xs: 12,
-                        children: fbg.Row({
-                            style: h.nestedRowStyle,
+                        children: h.container(fbg.Row({
+                            style: h.containerStyle,
                             center: fbg.ModificatorType.xs,
                             children: [
                                 fbg.Col({
@@ -41,7 +41,7 @@ export function create(): b.IBobrilNode {
                                     children: x.Box({})
                                 })
                             ]
-                        })
+                        }))
                     })
                 ]
             }),
@@ -50,8 +50,8 @@ export function create(): b.IBobrilNode {
                 children: [
                     fbg.Col({
                         xs: 12,
-                        children: fbg.Row({
-                            style: h.nestedRowStyle,
+                        children: h.container(fbg.Row({
+                            style: h.containerStyle,
                             end: fbg.ModificatorType.xs,
                             children: [
                                 fbg.Col({
@@ -59,7 +59,7 @@ export function create(): b.IBobrilNode {
                                     children: x.Box({})
                                 })
                             ]
-                        })
+                        }))
                     })
                 ]
             }),
@@ -70,7 +70,7 @@ export function create(): b.IBobrilNode {
                     fbg.Col({
                         style: h.higherColStyle,
                         xs: 6,
-                        children: x.Box({})
+                        children: x.Box({ style: highBoxStyle })
                     }),
                     fbg.Col({
                         xs: 6,
@@ -85,7 +85,7 @@ export function create(): b.IBobrilNode {
                     fbg.Col({
                         style: h.higherColStyle,
                         xs: 6,
-                        children: x.Box({})
+                        children: x.Box({ style: highBoxStyle })
                     }),
                     fbg.Col({
                         xs: 6,
@@ -100,7 +100,7 @@ export function create(): b.IBobrilNode {
                     fbg.Col({
                         style: h.higherColStyle,
                         xs: 6,
-                        children: x.Box({})
+                        children: x.Box({ style: highBoxStyle })
                     }),
                     fbg.Col({
                         xs: 6,
@@ -111,3 +111,7 @@ export function create(): b.IBobrilNode {
         ]
     });
 }
+
+export const highBoxStyle = b.styleDef({
+    height: 150
+});
