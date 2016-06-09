@@ -7,6 +7,7 @@ import * as eo from "./examples/offsets";
 import * as eaw from "./examples/autoWidth";
 import * as eal from "./examples/alignment";
 import * as ed from "./examples/distribution";
+import * as erv from "./examples/reverse";
 
 b.init(() => {
     return [
@@ -18,7 +19,8 @@ b.init(() => {
                 eo.create(),
                 eaw.create(),
                 eal.create(),
-                ed.create()
+                ed.create(),
+                erv.create()
             ]
         })
     ];

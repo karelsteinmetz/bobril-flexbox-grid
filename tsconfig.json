@@ -17,6 +17,7 @@
         "examples/helpers.ts",
         "examples/offsets.ts",
         "examples/responsive.ts",
+        "examples/reverse.ts",
         "examples/section.ts",
         "index.ts",
         "node_modules/bobril/jsx.d.ts",
