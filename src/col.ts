@@ -2,18 +2,24 @@ import * as b from 'bobril';
 
 type ModificatorType = number | boolean;
 
-export interface IColData {
+export interface IModificatorTypeColData {
+    xs?: ModificatorType;
+    sm?: ModificatorType;
+    md?: ModificatorType;
+    lg?: ModificatorType;
+}
+
+export interface IOffsetColData {
+    xsOffset?: number;
+    smOffset?: number;
+    mdOffset?: number;
+    lgOffset?: number;
+}
+
+export interface IColData extends IModificatorTypeColData, IOffsetColData {
     className?: string;
     tagName?: string;
     reverse?: boolean;
-    xs?: ModificatorType,
-    sm?: ModificatorType,
-    md?: ModificatorType,
-    lg?: ModificatorType,
-    xsOffset?: number,
-    smOffset?: number,
-    mdOffset?: number,
-    lgOffset?: number,
     children: b.IBobrilChildren;
     style?: b.IBobrilStyles;
 }
