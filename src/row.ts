@@ -56,8 +56,8 @@ export const Row = b.createComponent<IRowData>({
         me.tag = ctx.data.tagName || 'div';
         if (ctx.data.className)
             modificators = [ctx.data.className, ...modificators];
-        ctx.data.style && b.style(me, ctx.data.style);
         me.className = modificators.join(' ');
+        ctx.data.style && b.style(me, ctx.data.style);
         me.children = ctx.data.children;
     }
 });

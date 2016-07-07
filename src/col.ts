@@ -59,8 +59,8 @@ export const Col = b.createComponent<IColData>({
             }
         }
 
-        ctx.data.style && b.style(me, ctx.data.style);
         me.className = classes.join(' ');
+        ctx.data.style && b.style(me, ctx.data.style);
         me.children = ctx.data.children;
     }
 });

@@ -16,10 +16,10 @@ export const Grid = b.createComponent<IGridData>({
     render(ctx: IGridCtx, me: b.IBobrilNode) {
         me.tag = ctx.data.tagName || 'div';
         const containerClass = ctx.data.fluid ? 'container-fluid' : 'container';
-        ctx.data.style && b.style(me, ctx.data.style);
         me.className = ctx.data.className
             ? ctx.data.className + ' ' + containerClass
             : containerClass;
+        ctx.data.style && b.style(me, ctx.data.style);
         me.children = ctx.data.children;
     }
 });
