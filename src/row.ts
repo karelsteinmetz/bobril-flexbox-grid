@@ -33,13 +33,33 @@ export interface IRowData {
     last?: ModificatorType;
     children: b.IBobrilChildren;
     style?: b.IBobrilStyles;
+    hoverStyle?: b.IBobrilStyle;
+
+    onSelect?: () => boolean;
 }
 
-interface IRowCtx {
-    data: IRowData
+interface IRowCtx extends b.IBobrilCtx {
+    data: IRowData;
+    pointerDown: () => void;
+    focusFromKeyboard: boolean;
+    hover: boolean;
+    down: boolean;
 }
 
 export const Row = b.createComponent<IRowData>({
+    init(ctx: IRowCtx) {
+        ctx.focusFromKeyboard = false;
+        ctx.down = false;
+        ctx.pointerDown = () => {
+            ctx.focusFromKeyboard = false;
+            if (b.pointersDownCount() === 1) {
+                ctx.down = true;
+                b.registerMouseOwner(ctx);
+                b.focus(ctx.me);
+            }
+            b.invalidate(ctx);
+        };
+    },
     render(ctx: IRowCtx, me: b.IBobrilNode) {
         let modificators = ['row'];
 
@@ -57,7 +77,48 @@ export const Row = b.createComponent<IRowData>({
         if (ctx.data.className)
             modificators = [ctx.data.className, ...modificators];
         me.className = modificators.join(' ');
-        ctx.data.style && b.style(me, ctx.data.style);
+        ctx.data.style && b.style(me, [ctx.data.style, ctx.hover && ctx.data.hoverStyle]);
         me.children = ctx.data.children;
+    },
+    onPointerUp(ctx: IRowCtx): boolean {
+        ctx.down = false;
+        b.releaseMouseOwner();
+        if (b.pointersDownCount() === 0) {
+            let a = ctx.data.onSelect;
+            if (a) a();
+        }
+        b.invalidate(ctx);
+        return true;
+    },
+    onKeyDown(ctx: IRowCtx, ev: b.IKeyDownUpEvent): boolean {
+        if (ev.which === 32 && ctx.focusFromKeyboard) {
+            ctx.down = true;
+            b.invalidate(ctx);
+            return true;
+        }
+        if (ev.which === 13 && ctx.focusFromKeyboard) {
+            let a = ctx.data.onSelect;
+            if (a) a();
+            return true;
+        }
+        return false;
+    },
+    onKeyUp(ctx: IRowCtx, ev: b.IKeyDownUpEvent): boolean {
+        if (ev.which === 32 && ctx.focusFromKeyboard) {
+            ctx.down = false;
+            b.invalidate(ctx);
+            let a = ctx.data.onSelect;
+            if (a) a();
+            return true;
+        }
+        return false;
+    },
+    onMouseEnter(ctx: IRowCtx) {
+        ctx.hover = true;
+        b.invalidate(ctx);
+    },
+    onMouseLeave(ctx: IRowCtx) {
+        ctx.hover = false;
+        b.invalidate(ctx);
     }
 });
