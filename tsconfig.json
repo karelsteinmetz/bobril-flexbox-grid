@@ -1,28 +1,26 @@
 {
     "compilerOptions": {
-        "target": "es6",
+        "target": "es5",
         "module": "commonjs",
         "moduleResolution": "node",
         "jsx": "react",
-        "reactNamespace": "b"
+        "reactNamespace": "b",
+        "declaration": false,
+        "lib": [
+            "es5",
+            "dom",
+            "es2015.core",
+            "es2015.promise"
+        ],
+        "removeComments": false,
+        "noLib": false,
+        "preserveConstEnums": false
     },
     "compileOnSave": false,
     "files": [
-        "example.ts",
-        "examples/alignment.ts",
-        "examples/autoWidth.ts",
-        "examples/box.ts",
-        "examples/distribution.ts",
-        "examples/fluid.ts",
-        "examples/helpers.ts",
-        "examples/offsets.ts",
-        "examples/responsive.ts",
-        "examples/reverse.ts",
-        "examples/section.ts",
-        "index.ts",
-        "node_modules/bobril/jsx.d.ts",
-        "src/col.ts",
-        "src/grid.ts",
-        "src/row.ts"
+        "node_modules/bobril/jsx.d.ts"
+    ],
+    "include": [
+        "**/*"
     ]
 }

@@ -24,7 +24,7 @@ export interface IColData extends IModificatorTypeColData, IOffsetColData {
     style?: b.IBobrilStyles;
 }
 
-interface IColCtx {
+interface IColCtx extends b.IBobrilCtx {
     data: IColData
 }
 

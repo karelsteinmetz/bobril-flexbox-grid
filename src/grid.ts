@@ -8,7 +8,7 @@ export interface IGridData {
     style?: b.IBobrilStyles;
 }
 
-interface IGridCtx {
+interface IGridCtx extends b.IBobrilCtx {
     data: IGridData
 }
 
