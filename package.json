@@ -1,11 +1,11 @@
 {
   "name": "bobril-flexbox-grid",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "dependencies": {
-    "bobril": "^4.39.0"
+    "bobril": "*"
   },
   "devDependencies": {
-    "bobril-m": "^0.6.0"
+    "bobril-m": "*"
   },
   "main": "index.js",
   "typescript": {
