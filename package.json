@@ -1,6 +1,6 @@
 {
   "name": "bobril-flexbox-grid",
-  "version": "0.0.14",
+  "version": "1.0.0",
   "dependencies": {
     "bobril": "*"
   },
@@ -13,7 +13,17 @@
   },
   "bobril": {
     "title": "Bobril FlexBox Grid",
-    "example": "example.ts"
+    "example": "example.ts",
+    "compilerOptions": {
+      "declaration": true,
+      "noImplicitAny": true,
+      "noImplicitThis": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "strictNullChecks": true
+    }
   },
   "repository": {
     "type": "git",

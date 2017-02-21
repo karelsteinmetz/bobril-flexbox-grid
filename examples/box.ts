@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 
-interface IBoxData {
+export interface IBoxData {
     style?: b.IBobrilStyles;
     children?: b.IBobrilChildren;
 }

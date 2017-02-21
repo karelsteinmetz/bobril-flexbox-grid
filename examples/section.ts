@@ -1,7 +1,7 @@
 import * as b from "bobril";
 import * as bm from "bobril-m";
 
-interface ISectionData {
+export interface ISectionData {
     title: string;
     description: string;
     children: b.IBobrilChildren;

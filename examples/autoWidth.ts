@@ -2,7 +2,6 @@ import * as b from "bobril";
 import * as s from "./section";
 import * as fbg from '../index';
 import * as x from "./box";
-import * as h from "./helpers";
 
 export function create(): b.IBobrilNode {
     return s.Section({

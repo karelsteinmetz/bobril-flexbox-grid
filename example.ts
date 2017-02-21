@@ -1,5 +1,4 @@
 import * as b from 'bobril';
-import * as bm from 'bobril-m';
 import * as fbg from './index';
 import * as er from "./examples/responsive";
 import * as ef from "./examples/fluid";

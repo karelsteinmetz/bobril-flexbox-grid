@@ -65,7 +65,7 @@ export const Row = b.createComponent<IRowData>({
 
         for (let i = 0; i < modificatorKeys.length; ++i) {
             const key = modificatorKeys[i];
-            const value = ctx.data[key];
+            const value = (<any>ctx.data)[key];
             if (value)
                 modificators.push(`${key}-${ModificatorTypeMap[value]}`);
         }

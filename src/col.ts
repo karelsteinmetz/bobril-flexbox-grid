@@ -1,12 +1,12 @@
 import * as b from 'bobril';
 
-type ModificatorType = number | boolean;
+export type ColModificatorType = number | boolean;
 
 export interface IModificatorTypeColData {
-    xs?: ModificatorType;
-    sm?: ModificatorType;
-    md?: ModificatorType;
-    lg?: ModificatorType;
+    xs?: ColModificatorType;
+    sm?: ColModificatorType;
+    md?: ColModificatorType;
+    lg?: ColModificatorType;
 }
 
 export interface IOffsetColData {
@@ -41,7 +41,7 @@ const classMap = {
 
 export const Col = b.createComponent<IColData>({
     render(ctx: IColCtx, me: b.IBobrilNode) {
-        const classes = [];
+        const classes: string[] = [];
 
         if (ctx.data.className)
             classes.push(ctx.data.className);
@@ -50,9 +50,9 @@ export const Col = b.createComponent<IColData>({
             classes.push('reverse');
 
         for (const key in ctx.data) {
-            if (ctx.data.hasOwnProperty(key) && classMap[key]) {
-                let colBaseClass = classMap[key];
-                let colClass = ctx.data[key];
+            if (ctx.data.hasOwnProperty(key) && (<any>classMap)[key]) {
+                let colBaseClass = (<any>classMap)[key];
+                let colClass = (<any>ctx.data)[key];
                 if (typeof (colClass) !== "boolean" && !isNaN(Number(colClass)))
                     colBaseClass = colBaseClass + '-' + colClass;
                 classes.push(colBaseClass);
