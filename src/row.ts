@@ -7,7 +7,7 @@ export const enum ModificatorType {
     lg
 }
 
-const ModificatorTypeMap = {
+const ModificatorTypeMap: { [key: number]: string } = {
     [ModificatorType.xs]: "xs",
     [ModificatorType.sm]: "sm",
     [ModificatorType.md]: "md",
